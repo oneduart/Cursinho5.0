@@ -49,17 +49,136 @@ const AvatarIcon = ({ id, size = 24, className = "" }) => {
 
 // --- DADOS DO CURSO ---
 const courseData = {
+  info: {
+    title: "Informática Kids",
+    target: "Nível Infantil (10 anos)",
+    duration: "20-30 horas",
+    methodology: "80% Prática / 20% Teoria"
+  },
   modules: [
-    { id: 1, title: "Introdução à Informática", duration: "2h", icon: <Monitor />, color: "bg-blue-100 text-blue-600", slides: [{title: "O que é Informática?", type: "theory", content: ["Ciência da informação automática.", "Hardware (físico) vs Software (programas)."]}] },
-    { id: 2, title: "Hardware do Computador", duration: "4h", icon: <Cpu />, color: "bg-purple-100 text-purple-600", slides: [{title: "Peças de dentro", type: "theory", content: ["CPU: Cérebro.", "RAM: Mesa de trabalho.", "HD: Armário."]}] },
-    { id: 3, title: "Periféricos", duration: "3h", icon: <Mouse />, color: "bg-orange-100 text-orange-600", slides: [{title: "Entrada e Saída", type: "concept", content: ["Mouse (Entra) e Monitor (Sai)."]}] },
-    { id: 4, title: "Sistema Operacional", duration: "4h", icon: <Layout />, color: "bg-sky-100 text-sky-600", slides: [{title: "Windows", type: "activity", content: ["Organize suas pastas e arquivos."]}] },
-    { id: 5, title: "Digitação Mágica", duration: "2h", icon: <Keyboard />, color: "bg-green-100 text-green-600", slides: [{title: "Teclado", type: "activity", content: ["Use o Shift para letras maiúsculas."]}] },
-    { id: 6, title: "Word: O Escritor", duration: "4h", icon: <FileText />, color: "bg-indigo-100 text-indigo-600", slides: [{title: "Textos", type: "activity", content: ["Mude as cores e tamanhos das fontes."]}] },
-    { id: 7, title: "PowerPoint", duration: "3h", icon: <Presentation />, color: "bg-rose-100 text-rose-600", slides: [{title: "Slides", type: "activity", content: ["Crie uma apresentação sobre você."]}] },
-    { id: 8, title: "Excel Básico", duration: "3h", icon: <Table />, color: "bg-emerald-100 text-emerald-600", slides: [{title: "Planilhas", type: "concept", content: ["Use células para organizar números."]}] },
-    { id: 9, title: "Segurança Digital", duration: "2h", icon: <ShieldCheck />, color: "bg-yellow-100 text-yellow-600", slides: [{title: "Internet", type: "theory", content: ["Cuidado com links estranhos e senhas."]}] },
-    { id: 10, title: "Projeto Final", duration: "Fim", icon: <Trophy />, color: "bg-amber-100 text-amber-600", slides: [{title: "Formatura", type: "activity", content: ["Complete o desafio final para ganhar o certificado!"]}] }
+    {
+      id: 1,
+      title: "Introdução à Informática",
+      duration: "2h",
+      icon: <Monitor />,
+      color: "bg-blue-100 text-blue-600 border-blue-200",
+      description: "O básico sobre computadores e como eles funcionam.",
+      slides: [
+        { title: "O que é Informática?", type: "theory", content: ["Informática é a ciência que estuda o tratamento da informação automática.", "Basicamente: É usar computadores para criar, guardar e encontrar informações!", "Onde usamos? Na escola, no hospital, no banco, nos jogos e no celular."] },
+        { title: "Tipos de Computadores", type: "theory", content: ["🖥️ Desktop (Computador de Mesa): Grande, potente, fica parado.", "💻 Notebook: Portátil, bateria, teclado junto da tela.", "📱 Tablet/Smartphone: Tela de toque, super portátil."] },
+        { title: "Hardware vs Software", type: "concept", content: ["🔨 HARDWARE: É tudo o que você pode CHUTAR (A parte física). Ex: Teclado, Tela, Mouse.", "👻 SOFTWARE: É tudo o que você pode XINGAR (Os programas). Ex: Windows, Joguinhos, YouTube."] },
+        { title: "Atividade Prática", type: "activity", content: ["1. Olhe ao seu redor na sua casa ou sala.", "2. Liste 3 equipamentos eletrônicos.", "3. Classifique: Tem tela? Tem teclado?"] },
+        { title: "Desafio Rápido!", type: "quiz", content: ["Eu vou falar um nome, e você grita se é HARDWARE ou SOFTWARE!", "Mouse? (Hardware)", "Minecraft? (Software)", "WhatsApp? (Software)"] }
+      ]
+    },
+    {
+      id: 2,
+      title: "Hardware do Computador",
+      duration: "4h",
+      icon: <Cpu />,
+      color: "bg-purple-100 text-purple-600 border-purple-200",
+      description: "Entendendo as peças de dentro do computador.",
+      slides: [
+        { title: "O Gabinete", type: "theory", content: ["O gabinete é a caixa que guarda todas as peças importantes.", "Não confunda: O monitor é a tela, o gabinete é a 'caixa'!"] },
+        { title: "As Peças (Analogia do Corpo)", type: "concept", content: ["🧠 Processador (CPU): É o cérebro. Ele pensa e faz os cálculos.", "⚡ Fonte: É o coração. Dá energia para tudo funcionar.", "📦 HD ou SSD: É o armário. Onde guardamos fotos e jogos."] },
+        { title: "Memória RAM", type: "concept", content: ["A Memória RAM é a sua 'Mesa de Trabalho'.", "Quanto maior a mesa, mais coisas você faz ao mesmo tempo.", "Quando desliga o PC, a mesa é limpa!"] }
+      ]
+    },
+    {
+      id: 3,
+      title: "Periféricos",
+      duration: "3h",
+      icon: <Mouse />,
+      color: "bg-orange-100 text-orange-600 border-orange-200",
+      description: "Dispositivos de entrada e saída.",
+      slides: [
+        { title: "O que são Periféricos?", type: "theory", content: ["São peças que ficam em volta do gabinete.", "Eles servem para a gente conversar com o computador."] },
+        { title: "Entrada vs Saída", type: "concept", content: ["➡️ Entrada (Input): Manda informação PRA DENTRO. Ex: Teclado.", "⬅️ Saída (Output): Tira informação PARA FORA. Ex: Monitor."] }
+      ]
+    },
+    {
+      id: 4,
+      title: "Sistema Operacional",
+      duration: "4h",
+      icon: <Layout />,
+      color: "bg-sky-100 text-sky-600 border-sky-200",
+      description: "Windows, Pastas e Arquivos.",
+      slides: [
+        { title: "O Chefe do Computador", type: "theory", content: ["O Sistema Operacional (Windows) é o chefe.", "Ele controla o hardware e deixa você usar os programas."] },
+        { title: "Organizando a Bagunça", type: "activity", content: ["1. Clique com botão direito na Área de Trabalho.", "2. Novo > Pasta.", "3. Escreva seu NOME."] }
+      ]
+    },
+    {
+      id: 5,
+      title: "Digitação Mágica",
+      duration: "2h",
+      icon: <Keyboard />,
+      color: "bg-green-100 text-green-600 border-green-200",
+      description: "Aprendendo a usar o teclado corretamente.",
+      slides: [
+        { title: "As Teclas Poderosas", type: "theory", content: ["ENTER: Botão de confirmação.", "BACKSPACE: Apaga para trás.", "SPACE: Dá espaço entre palavras."] },
+        { title: "O Segredo do SHIFT", type: "concept", content: ["Segure o SHIFT e aperte uma letra para ela sair MAIÚSCULA."] }
+      ]
+    },
+    {
+      id: 6,
+      title: "Word: O Escritor",
+      duration: "4h",
+      icon: <FileText />,
+      color: "bg-indigo-100 text-indigo-600 border-indigo-200",
+      description: "Criando documentos bonitos.",
+      slides: [
+        { title: "Conhecendo o Word", type: "theory", content: ["É um processador de texto para trabalhos e cartas."] },
+        { title: "Maquiagem do Texto", type: "concept", content: ["Fonte: O desenho da letra.", "Tamanho: Letra grande ou pequena.", "Negrito: Letra gordinha."] }
+      ]
+    },
+    {
+      id: 7,
+      title: "PowerPoint: O Artista",
+      duration: "3h",
+      icon: <Presentation />,
+      color: "bg-rose-100 text-rose-600 border-rose-200",
+      description: "Criando apresentações e slides.",
+      slides: [
+        { title: "O que é um Slide?", type: "theory", content: ["É como um cartaz digital para apresentações."] },
+        { title: "Hora do Show", type: "activity", content: ["Aperte F5 para ver seu slide em TELA CHEIA!"] }
+      ]
+    },
+    {
+      id: 8,
+      title: "Excel: O Matemático",
+      duration: "3h",
+      icon: <Table />,
+      color: "bg-emerald-100 text-emerald-600 border-emerald-200",
+      description: "Planilhas e tabelas básicas.",
+      slides: [
+        { title: "Linhas e Colunas", type: "theory", content: ["Colunas são Letras (A, B, C).", "Linhas são Números (1, 2, 3)."] },
+        { title: "A Fórmula Mágica", type: "concept", content: ["Toda conta começa com o sinal de IGUAL (=)."] }
+      ]
+    },
+    {
+      id: 9,
+      title: "Segurança Digital",
+      duration: "2h",
+      icon: <ShieldCheck />,
+      color: "bg-yellow-100 text-yellow-600 border-yellow-200",
+      description: "Navegando sem perigos.",
+      slides: [
+        { title: "O Perigo dos Cliques", type: "theory", content: ["Não clique em anúncios que prometem prêmios grátis!"] },
+        { title: "Senhas Fortes", type: "concept", content: ["Nunca conte sua senha para estranhos, só para os pais."] }
+      ]
+    },
+    {
+      id: 10,
+      title: "Grande Projeto Final",
+      duration: "Fim",
+      icon: <Trophy />,
+      color: "bg-amber-100 text-amber-600 border-amber-200",
+      description: "Mostrando tudo o que aprendeu.",
+      slides: [
+        { title: "A Missão Final", type: "activity", content: ["Crie uma pasta chamada PROJETO FINAL e guarde seus arquivos nela.", "Parabéns por chegar ao fim!"] }
+      ]
+    }
   ]
 };
 
