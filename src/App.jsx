@@ -18,7 +18,7 @@ import {
 // --- CONFIGURAÇÃO DO FIREBASE ---
 // Cole suas chaves aqui novamente
 const firebaseConfig = {
-  apiKey: "AIzaSyDKMNklM6lOAUqmOyGR9m3rQb3DfcmStH8",
+ apiKey: "AIzaSyDKMNklM6lOAUqmOyGR9m3rQb3DfcmStH8",
   authDomain: "cursoinfo-b829d.firebaseapp.com",
   projectId: "cursoinfo-b829d",
   storageBucket: "cursoinfo-b829d.firebasestorage.app",
